@@ -29,7 +29,23 @@ function App() {
   }
   return (
     <div className="App">
+      <h1>Image to Text App</h1>
+      <p>Get words in image !</p>
+      <div className='input-wrapper'>
+        <label htmlFor='upload'>Upload Image</label>
+        <input type="file" id='upload' accept='image/*' onChange={handleChangeImage} />
+      </div>
 
+      <div className='result'>
+      {selectedImage && (
+        <img src={URL.createObjectURL(selectedImage)} alt="thumbnail" />
+      )}
+      {textResult && (
+        <div className='box-p'>
+          <p>{textResult}</p>
+        </div>
+      )}
+      </div>
     </div>
   );
 }
